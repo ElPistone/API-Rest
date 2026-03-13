@@ -20,6 +20,12 @@ const PORT = process.env.PORT || 5000;
 app.get("/", (req, res) => {
   res.send("Bienvenue sur l'API Express.js avec MongoDB !");
 });
+// Importer les routes utilisateur
+const userRoutes = require('./routes/userRoutes');
+
+
+// Utiliser les routes utilisateur
+app.use('/api/users', userRoutes);
 
 // Connexion à MongoDB
 mongoose
